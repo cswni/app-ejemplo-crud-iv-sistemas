@@ -25,4 +25,15 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    //Ruta para el CRUD de estudiantes
+    Route::get('/estudiantes', \App\Http\Livewire\EstudiantesComponent::class)
+    ->name('estudiantes');
+
+    Route::get('/estudiante/editar/{id}', \App\Http\Livewire\EstudianteEditComponent::class)
+    ->name('estudiantes.editar');
+
+    Route::get('/estudiante/eliminar/{id}', \App\Http\Livewire\EstudianteEliminarComponent::class)
+    ->name('estudiantes.eliminar');
+
 });
